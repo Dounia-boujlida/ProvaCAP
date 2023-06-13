@@ -24,6 +24,15 @@
           "localUri": "localService/metadata.xml",
           "odataVersion": "4.0"
         }
+      },
+      "mainServiceV2": {
+        "uri": "v2/donia-service2/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
       }
     }
   },
@@ -70,7 +79,7 @@
         }
       },
       "": {
-        "dataSource": "mainService",
+        "dataSource": "mainServiceV2",
         "preload": true,
         "settings": {
           "synchronizationMode": "None",
