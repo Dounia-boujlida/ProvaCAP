@@ -6,9 +6,18 @@
         <Table id="idProductsTable"
 		inset="false"
 		items="{
-			path: 'Prodotti>/'
+			path: '/DoniaProvaTabella2'
 		}">
-        
+		<headerToolbar>
+			<OverflowToolbar>
+				<Button
+					text="Nuovo Record"
+					press="onAdd"
+				>
+					
+				</Button>
+			</OverflowToolbar>
+		</headerToolbar>
 		<columns>
 			<Column>
 				<Text text="ID" />
@@ -19,13 +28,22 @@
 			<Column>
 				<Text text="Data" />
 			</Column>
+			<Column>
+				<Text text="Modifica" />
+			</Column>
+			<Column>
+				<Text text="Rimuovi" />
+			</Column>
 		</columns>
 		<items>
 			<ColumnListItem vAlign="Middle">
 				<cells>
-					<Text text="{path:'Prodotti>id'}"></Text>
-                    <Text text="{path:'Prodotti>name'}"></Text>
-                    <Text text="{path:'Prodotti>date'}"></Text>
+					<Text text="{path:'id'}"></Text>
+                    <Text text="{path:'name'}"></Text>
+                    <Text text="{path:'date', type: 'sap.ui.model.type.Date', formatOptions: {
+					pattern: 'dd/MM/yyyy'}}"></Text>
+					<Button text="Modifica" press="updateEmployee"/>
+                <Button text="Rimuovi" press="removeEmployee"/>
 				</cells>
 			</ColumnListItem>
 		</items>

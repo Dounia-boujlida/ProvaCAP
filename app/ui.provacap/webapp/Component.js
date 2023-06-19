@@ -5,7 +5,8 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "ui/provacap/model/models"
+        "ui/provacap/model/models",
+        "sap/ui/model/json/JSONModel"
     ],
     function (UIComponent, Device, models) {
         "use strict";
@@ -29,6 +30,14 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+
+                let oModel = new sap.ui.model.json.JSONModel({
+                    id:"",
+                    name:"",
+                    date:""
+                });
+
+                 this.setModel(oModel ,"formModel");
             }
         });
     }

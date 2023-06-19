@@ -1,0 +1,78 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+<Dialog
+    closeOnNavigation="true"
+    contentHeight=""
+    contentWidth=""
+    draggable="false"
+    escapeHandler=""
+    horizontalScrolling="true"
+    icon=""
+    resizable="false"
+    showHeader="true"
+    state="None"
+    stretch="false"
+    title="Add Employee"
+    titleAlignment="Auto"
+    id="helloDialog"
+>
+    <f:SimpleForm
+        adjustLabelSpan="true"
+        backgroundDesign="Translucent"
+        breakpointL="1024"
+        breakpointM="600"
+        breakpointXL="1440"
+        columnsL="2"
+        columnsM="1"
+        columnsXL="-1"
+        editable=""
+        emptySpanL="0"
+        emptySpanM="0"
+        emptySpanS="0"
+        emptySpanXL="-1"
+        labelMinWidth="192"
+        labelSpanL="4"
+        labelSpanM="2"
+        labelSpanS="12"
+        labelSpanXL="-1"
+        layout="ResponsiveLayout"
+        maxContainerCols="2"
+        minWidth="-1"
+        singleContainerFullSize="true"
+        width=""
+    >
+        <f:content>
+            <Label text="ID"></Label>
+            <Input type="Text" value="{formModel>/id}"></Input>
+            <Label text="Nome"></Label>
+            <Input type="Text" value="{formModel>/name}"></Input>
+            <Label text="Data"></Label>
+            <DatePicker
+                    id="DP2"
+                    placeholder="Enter Date"
+                    change="handleChange"
+                    class="sapUiSmallMarginBottom"
+                    value="{
+                        'path': 'formModel>/date',
+                        'type': 'sap.ui.model.type.Date',
+                        'formatOptions': {
+                            'pattern': 'dd/MM/y'
+                        }
+                    }"/>
+
+        </f:content>
+        <VBox>
+        </VBox>
+    </f:SimpleForm>
+    <buttons>
+            <Button text="Add" press="addEmployee"/>
+        
+            <Button text="Close" press="closeOnPress"/>
+    </buttons>
+</Dialog>
+</c:FragmentDefinition>
